@@ -1,92 +1,179 @@
-# rustling
+# rustlings 🦀❤️
 
+Greetings and welcome to `rustlings`. This project contains small exercises to get you used to reading and writing Rust code. This includes reading and responding to compiler messages!
 
+_...looking for the old, web-based version of Rustlings? Try [here](https://github.com/rust-lang/rustlings/tree/rustlings-1)_
 
-## Getting started
+Alternatively, for a first-time Rust learner, there are several other resources:
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- [The Book](https://doc.rust-lang.org/book/index.html) - The most comprehensive resource for learning Rust, but a bit theoretical sometimes. You will be using this along with Rustlings!
+- [Rust By Example](https://doc.rust-lang.org/rust-by-example/index.html) - Learn Rust by solving little exercises! It's almost like `rustlings`, but online
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## Getting Started
 
-## Add your files
+_Note: If you're on MacOS, make sure you've installed Xcode and its developer tools by typing `xcode-select --install`._
+_Note: If you're on Linux, make sure you've installed gcc. Deb: `sudo apt install gcc`. Yum: `sudo yum -y install gcc`._
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+You will need to have Rust installed. You can get it by visiting https://rustup.rs. This'll also install Cargo, Rust's package/project manager.
 
+## MacOS/Linux
+
+Just run:
+
+```bash
+curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/tomaszjarosz1994/rustling.git
-git branch -M main
-git push -uf origin main
+Or if you want it to be installed to a different path:
+
+```bash
+curl -L https://raw.githubusercontent.com/rust-lang/rustlings/main/install.sh | bash -s mypath/
 ```
 
-## Integrate with your tools
+This will install Rustlings and give you access to the `rustlings` command. Run it to get started!
 
-- [ ] [Set up project integrations](https://gitlab.com/tomaszjarosz1994/rustling/-/settings/integrations)
+### Nix
 
-## Collaborate with your team
+Basically: Clone the repository at the latest tag, finally run `nix develop` or `nix-shell`.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+```bash
+# find out the latest version at https://github.com/rust-lang/rustlings/releases/latest (on edit 5.4.1)
+git clone -b 5.4.1 --depth 1 https://github.com/rust-lang/rustlings
+cd rustlings
+# if nix version > 2.3
+nix develop
+# if nix version <= 2.3
+nix-shell
+```
 
-## Test and Deploy
+## Windows
 
-Use the built-in continuous integration in GitLab.
+In PowerShell (Run as Administrator), set `ExecutionPolicy` to `RemoteSigned`:
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+```ps1
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-***
+Then, you can run:
 
-# Editing this README
+```ps1
+Start-BitsTransfer -Source https://raw.githubusercontent.com/rust-lang/rustlings/main/install.ps1 -Destination $env:TMP/install_rustlings.ps1; Unblock-File $env:TMP/install_rustlings.ps1; Invoke-Expression $env:TMP/install_rustlings.ps1
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+To install Rustlings. Same as on MacOS/Linux, you will have access to the `rustlings` command after it. Keep in mind that this works best in PowerShell, and any other terminals may give you errors.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+If you get a permission denied message, you might have to exclude the directory where you cloned Rustlings in your antivirus.
 
-## Name
-Choose a self-explaining name for your project.
+## Browser
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rust-lang/rustlings)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+[![Open Rustlings On Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new/?repo=rust-lang%2Frustlings&ref=main)
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## Manually
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Basically: Clone the repository at the latest tag, run `cargo install --path .`.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+```bash
+# find out the latest version at https://github.com/rust-lang/rustlings/releases/latest (on edit 5.4.1)
+git clone -b 5.4.1 --depth 1 https://github.com/rust-lang/rustlings
+cd rustlings
+cargo install --force --path .
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+If there are installation errors, ensure that your toolchain is up to date. For the latest, run:
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+```bash
+rustup update
+```
+
+Then, same as above, run `rustlings` to get started.
+
+## Doing exercises
+
+The exercises are sorted by topic and can be found in the subdirectory `rustlings/exercises/<topic>`. For every topic there is an additional README file with some resources to get you started on the topic. We really recommend that you have a look at them before you start.
+
+The task is simple. Most exercises contain an error that keeps them from compiling, and it's up to you to fix it! Some exercises are also run as tests, but rustlings handles them all the same. To run the exercises in the recommended order, execute:
+
+```bash
+rustlings watch
+```
+
+This will try to verify the completion of every exercise in a predetermined order (what we think is best for newcomers). It will also rerun automatically every time you change a file in the `exercises/` directory. If you want to only run it once, you can use:
+
+```bash
+rustlings verify
+```
+
+This will do the same as watch, but it'll quit after running.
+
+In case you want to go by your own order, or want to only verify a single exercise, you can run:
+
+```bash
+rustlings run myExercise1
+```
+
+Or simply use the following command to run the next unsolved exercise in the course:
+
+```bash
+rustlings run next
+```
+
+In case you get stuck, you can run the following command to get a hint for your
+exercise:
+
+```bash
+rustlings hint myExercise1
+```
+
+You can also get the hint for the next unsolved exercise with the following command:
+
+```bash
+rustlings hint next
+```
+
+To check your progress, you can run the following command:
+
+```bash
+rustlings list
+```
+
+## Testing yourself
+
+After every couple of sections, there will be a quiz that'll test your knowledge on a bunch of sections at once. These quizzes are found in `exercises/quizN.rs`.
+
+## Enabling `rust-analyzer`
+
+Run the command `rustlings lsp` which will generate a `rust-project.json` at the root of the project, this allows [rust-analyzer](https://rust-analyzer.github.io/) to parse each exercise.
+
+## Continuing On
+
+Once you've completed Rustlings, put your new knowledge to good use! Continue practicing your Rust skills by building your own projects, contributing to Rustlings, or finding other open-source projects to contribute to.
+
+## Uninstalling Rustlings
+
+If you want to remove Rustlings from your system, there are two steps. First, you'll need to remove the exercises folder that the install script created
+for you:
+
+```bash
+rm -rf rustlings # or your custom folder name, if you chose and or renamed it
+```
+
+Second, run `cargo uninstall` to remove the `rustlings` binary:
+
+```bash
+cargo uninstall rustlings
+```
+
+Now you should be done!
 
 ## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Development-focused discussion about Rustlings happens in the [**rustlings** stream](https://rust-lang.zulipchat.com/#narrow/stream/334454-rustlings)
+on the [Rust Project Zulip](https://rust-lang.zulipchat.com). Feel free to start a new thread there
+if you have ideas or suggestions!
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## Contributors ✨
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Thanks goes to the wonderful people listed in [AUTHORS.md](./AUTHORS.md) 🎉
